@@ -12,4 +12,5 @@ public class DataContext : DbContext
 
     public DbSet<Item> Items { get; set; } = null!;
     public DbSet<RentEpisode> RentEpisodes { get; set; } = null!;
+    public DbSet<Member> Members { get; set; } = null!;
 }

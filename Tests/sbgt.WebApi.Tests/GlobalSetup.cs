@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace sbgt.WebApi.Tests;
 
+[SetUpFixture]
 public class GlobalSetup
 {
 

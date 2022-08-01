@@ -7,4 +7,5 @@ public class RentEpisode
     public DateTime EndDateTime { get; set; }
 
     public Item Item { get; set; } = null!;
+    public Member Rentee { get; set; } = null!;
 }

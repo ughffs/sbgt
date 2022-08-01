@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbgt.ServiceLogic", "sbgt.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbgt.MigrationRunner", "sbgt.MigrationRunner\sbgt.MigrationRunner.csproj", "{887FBC51-AA93-453D-A251-08A4DFC99B19}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5A2DB368-A67C-4956-9A61-2C60D7799758}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbgt.WebApi.Tests", "Tests\sbgt.WebApi.Tests\sbgt.WebApi.Tests.csproj", "{75CAF583-9F9A-4C3A-A49F-BDB54EBFAA20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +46,12 @@ Global
 		{887FBC51-AA93-453D-A251-08A4DFC99B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{887FBC51-AA93-453D-A251-08A4DFC99B19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{887FBC51-AA93-453D-A251-08A4DFC99B19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75CAF583-9F9A-4C3A-A49F-BDB54EBFAA20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75CAF583-9F9A-4C3A-A49F-BDB54EBFAA20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75CAF583-9F9A-4C3A-A49F-BDB54EBFAA20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75CAF583-9F9A-4C3A-A49F-BDB54EBFAA20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{75CAF583-9F9A-4C3A-A49F-BDB54EBFAA20} = {5A2DB368-A67C-4956-9A61-2C60D7799758}
 	EndGlobalSection
 EndGlobal

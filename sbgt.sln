@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbgt.WebApi", "sbgt.WebApi\sbgt.WebApi.csproj", "{CFAF7126-3F8F-4920-8DE0-EE4E21A2A872}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbgt.ClientModel", "sbgt.ClientModel\sbgt.ClientModel.csproj", "{1822D9CD-B48E-40B9-A637-A2E817AC1729}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbgt.Repository", "sbgt.Repository\sbgt.Repository.csproj", "{A080C3CD-B61E-4828-B32E-9EB9AFF45529}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbgt.ServiceLogic", "sbgt.ServiceLogic\sbgt.ServiceLogic.csproj", "{FBA30646-1373-42B0-99D0-A58ECE8BE4DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +24,17 @@ Global
 		{CFAF7126-3F8F-4920-8DE0-EE4E21A2A872}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFAF7126-3F8F-4920-8DE0-EE4E21A2A872}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFAF7126-3F8F-4920-8DE0-EE4E21A2A872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1822D9CD-B48E-40B9-A637-A2E817AC1729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1822D9CD-B48E-40B9-A637-A2E817AC1729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1822D9CD-B48E-40B9-A637-A2E817AC1729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1822D9CD-B48E-40B9-A637-A2E817AC1729}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A080C3CD-B61E-4828-B32E-9EB9AFF45529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A080C3CD-B61E-4828-B32E-9EB9AFF45529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A080C3CD-B61E-4828-B32E-9EB9AFF45529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A080C3CD-B61E-4828-B32E-9EB9AFF45529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBA30646-1373-42B0-99D0-A58ECE8BE4DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA30646-1373-42B0-99D0-A58ECE8BE4DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA30646-1373-42B0-99D0-A58ECE8BE4DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA30646-1373-42B0-99D0-A58ECE8BE4DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

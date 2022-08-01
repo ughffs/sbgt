@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbgt.WebApi", "sbgt.WebApi\sbgt.WebApi.csproj", "{CFAF7126-3F8F-4920-8DE0-EE4E21A2A872}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbgt.Domain", "sbgt.Domain\sbgt.Domain.csproj", "{C94507D0-1BA1-4AF0-BF14-C186EA6E39C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{CFAF7126-3F8F-4920-8DE0-EE4E21A2A872}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFAF7126-3F8F-4920-8DE0-EE4E21A2A872}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFAF7126-3F8F-4920-8DE0-EE4E21A2A872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C94507D0-1BA1-4AF0-BF14-C186EA6E39C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C94507D0-1BA1-4AF0-BF14-C186EA6E39C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C94507D0-1BA1-4AF0-BF14-C186EA6E39C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C94507D0-1BA1-4AF0-BF14-C186EA6E39C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

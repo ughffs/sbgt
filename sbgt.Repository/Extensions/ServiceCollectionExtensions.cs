@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using sbgt.Repository.Configuration;
 using sbgt.Repository.Context;
+using sbgt.Repository.Repositories;
+using sbgt.Repository.Repositories.Interfaces;
 
 namespace sbgt.Repository.Extensions;
 
@@ -19,6 +21,7 @@ public static class ServiceCollectionExtensions
         services.AddDbContext<DataContext>(options => options.UseNpgsql(builder.ConnectionString));
 
         // Add repositories here
+        services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
         return services;
     }

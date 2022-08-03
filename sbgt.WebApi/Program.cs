@@ -1,5 +1,6 @@
 using sbgt.Repository.Configuration;
 using sbgt.Repository.Extensions;
+using sbgt.ServiceLogic.Extensions;
 
 namespace sbgt.WebApi;
 
@@ -19,6 +20,7 @@ public class Program
         var dbConfig = builder.Configuration.GetSection("DatabaseConfiguration").Get<DatabaseConfiguration>();
 
         builder.Services.AddRepositoryDependencies(dbConfig);
+        builder.Services.AddServiceDependencies();
 
         var app = builder.Build();
 

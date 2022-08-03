@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.4.0-pre03" />
+    <PackageReference Include="Mapster.DependencyInjection" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\sbgt.ClientModel\sbgt.ClientModel.csproj" />
+    <ProjectReference Include="..\sbgt.Repository\sbgt.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

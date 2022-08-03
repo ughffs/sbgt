@@ -12,9 +12,9 @@ public static class WebApplicationExtensions
         using (IServiceScope scope = app.Services.CreateScope())
         {
             var requiredService = scope.ServiceProvider.GetRequiredService<TDbContext>();
-            requiredService.Database.EnsureCreated();
+            var databaseCreated = requiredService.Database.EnsureCreated();
 
-            if (postCreationAction != null) postCreationAction(requiredService);
+            if (databaseCreated && postCreationAction != null) postCreationAction(requiredService);
         }
     }
 }

@@ -20,11 +20,14 @@ public class ItemRepository : BaseRepository<Item>, IItemRepository
         return fetchedItem;
     }
 
+    public async Task<List<Item>> GetAllItems(CancellationToken cancellationToken)
+    {
+        return await AsQueryableWithNavigationProperties.ToListAsync(cancellationToken);
+    }
+
     public IQueryable<Item> AsQueryableWithNavigationProperties =>
         Context.Items
             .Include(i => i.Owner)
-            .Include(i => i.RentEpisodes)
-                .ThenInclude(re => re.Item)
             .Include(i => i.RentEpisodes)
                 .ThenInclude(re => re.Rentee);
 }

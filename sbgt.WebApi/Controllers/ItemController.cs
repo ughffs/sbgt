@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using sbgt.ServiceLogic.Services.Interfaces;
 
 namespace sbgt.WebApi.Controllers;
 
@@ -6,8 +7,11 @@ namespace sbgt.WebApi.Controllers;
 [Route("[controller]")]
 public class ItemController : ControllerBase
 {
-    public ItemController()
+    private readonly IItemService _itemService;
+
+    public ItemController(IItemService itemService)
     {
+        _itemService = itemService;
     }
 
     [HttpGet("{id:Guid?}")]
@@ -17,8 +21,10 @@ public class ItemController : ControllerBase
     }
 
     [HttpGet("all")]
-    public async Task<ActionResult> GetAllItems()
+    public async Task<ActionResult> GetAllItems(CancellationToken cancellationToken)
     {
-        return Ok("Test");
+        var items = await _itemService.GetAllItems(cancellationToken);
+
+        return Ok(items);
     }
 }

@@ -1,15 +1,11 @@
 using Mapster;
 using MapsterMapper;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using Npgsql;
-using sbgt.Repository.Configuration;
-using sbgt.Repository.Context;
+using sbgt.ClientModel.Summaries;
 using sbgt.Repository.Entities;
-using sbgt.Repository.Repositories;
-using sbgt.Repository.Repositories.Interfaces;
 using sbgt.ServiceLogic.Services;
 using sbgt.ServiceLogic.Services.Interfaces;
+using RentEpisodeSummary = sbgt.ClientModel.Summaries.RentEpisodeSummary;
 
 namespace sbgt.ServiceLogic.Extensions;
 
@@ -19,6 +15,10 @@ public static class ServiceCollectionExtensions
     {
         var mappingConfig = new TypeAdapterConfig();
         mappingConfig.NewConfig<Member, ClientModel.Member>();
+        mappingConfig.NewConfig<Member, MemberSummary>();
+        mappingConfig.NewConfig<Item, ClientModel.Item>();
+        mappingConfig.NewConfig<RentEpisode, ClientModel.RentEpisode>();
+        mappingConfig.NewConfig<RentEpisode, RentEpisodeSummary>();
 
         services.AddSingleton(mappingConfig);
         services.AddScoped<IMapper, ServiceMapper>();

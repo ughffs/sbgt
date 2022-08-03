@@ -41,7 +41,7 @@ public class InitialTests //: TestSetup
         var request = new HttpRequestMessage()
         {
             Method = HttpMethod.Get,
-            RequestUri = new Uri($"/Member/{member.Id}", UriKind.Relative)
+            RequestUri = new Uri($"/Member/{member?.Id}", UriKind.Relative)
         };
 
         // ACT

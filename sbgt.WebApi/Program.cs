@@ -1,6 +1,9 @@
+using sbgt.Repository;
 using sbgt.Repository.Configuration;
+using sbgt.Repository.Context;
 using sbgt.Repository.Extensions;
 using sbgt.ServiceLogic.Extensions;
+using sbgt.WebApi.Extensions;
 
 namespace sbgt.WebApi;
 
@@ -21,14 +24,17 @@ public class Program
 
         builder.Services.AddRepositoryDependencies(dbConfig);
         builder.Services.AddServiceDependencies();
-
+        
         var app = builder.Build();
-
+        
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
             app.UseSwaggerUI();
+            app.EnsureDbExists<DataContext>(
+                context => Seeder.SeedData(context)
+                );
         }
 
         app.UseHttpsRedirection();
@@ -38,6 +44,6 @@ public class Program
         app.MapControllers();
 
         app.Run();
-
+        
     }
 }

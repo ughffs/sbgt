@@ -1,4 +1,4 @@
-namespace sbgt.WebApi.Tests;
+namespace sbgt.WebApi.Tests.Configuration;
 
 public class TestConfiguration
 {

@@ -1,7 +1,6 @@
-using sbgt.Repository.Context;
 using sbgt.WebApi.Tests.WebApplicationFactory;
-using NUnit.Framework;
 using Microsoft.Extensions.Configuration;
+using sbgt.WebApi.Tests.Configuration;
 
 namespace sbgt.WebApi.Tests;
 

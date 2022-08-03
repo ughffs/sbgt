@@ -11,6 +11,8 @@ public static class TestData
         Items[1].Owner = Members[0];
         Items[2].Owner = Members[1];
 
+        context.Database.EnsureCreated();
+        
         foreach (var member in Members)
         {
             context.Set<Member>().Add(member);

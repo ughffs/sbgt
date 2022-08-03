@@ -18,7 +18,7 @@ public class InitialTests //: TestSetup
         // ARRANGE
         var request = new HttpRequestMessage()
         {
-            Method = HttpMethod.Post,
+            Method = HttpMethod.Get,
             RequestUri = new Uri($"/Item/all", UriKind.Relative)
         };
 

@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Npgsql;
 using sbgt.Repository.Configuration;
 using sbgt.Repository.Context;
+using sbgt.WebApi.Tests.Configuration;
 
 namespace sbgt.WebApi.Tests.WebApplicationFactory;
 

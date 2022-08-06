@@ -17,6 +17,7 @@ public static class ServiceCollectionExtensions
         mappingConfig.NewConfig<Member, ClientModel.Member>();
         mappingConfig.NewConfig<Member, MemberSummary>();
         mappingConfig.NewConfig<Item, ClientModel.Item>();
+        mappingConfig.NewConfig<Item, ItemSummary>();
         mappingConfig.NewConfig<RentEpisode, ClientModel.RentEpisode>();
         mappingConfig.NewConfig<RentEpisode, RentEpisodeSummary>();
 

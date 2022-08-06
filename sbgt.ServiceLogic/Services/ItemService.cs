@@ -7,28 +7,22 @@ namespace sbgt.ServiceLogic.Services;
 
 public class ItemService : IItemService
 {
-    private readonly IMapper _mapper;
     private readonly IItemRepository _itemRepostory;
 
-    public ItemService(
-        IMapper mapper,
-        IItemRepository itemRepostory)
+    public ItemService(IItemRepository itemRepostory)
     {
-        _mapper = mapper;
         _itemRepostory = itemRepostory;
     }
     
-    public async Task<ClientModel.Item> GetItemByGuid(Guid guid, CancellationToken cancellationToken)
+    public async Task<Item> GetItemByGuid(Guid guid, CancellationToken cancellationToken)
     {
         var fetchedItem = await _itemRepostory.GetItemByGuid(guid, cancellationToken);
-        
-        return _mapper.From(fetchedItem).AdaptToType<ClientModel.Item>();
+        return fetchedItem;
     }
 
-    public async Task<List<ClientModel.Item>> GetAllItems(CancellationToken cancellationToken)
+    public async Task<List<Item>> GetAllItems(CancellationToken cancellationToken)
     {
         var fetchedItems = await _itemRepostory.GetAllItems(cancellationToken);
-
-        return _mapper.From(fetchedItems).AdaptToType<List<ClientModel.Item>>();
+        return fetchedItems;
     }
 }

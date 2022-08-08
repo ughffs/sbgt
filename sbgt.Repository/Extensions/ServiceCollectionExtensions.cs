@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using sbgt.Repository.Configuration;
 using sbgt.Repository.Context;
+using sbgt.Repository.Entities;
 using sbgt.Repository.Repositories;
 using sbgt.Repository.Repositories.Interfaces;
 
@@ -24,6 +25,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
         services.AddScoped<IItemRepository, ItemRepository>();
         services.AddScoped<IMemberRepository, MemberRepository>();
+        services.AddScoped<IRentEpisodeRepository, RentEpisodeRepository>();
 
         return services;
     }

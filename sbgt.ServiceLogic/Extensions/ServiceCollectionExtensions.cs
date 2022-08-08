@@ -25,6 +25,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IMapper, ServiceMapper>();
         services.AddScoped<IItemService, ItemService>();
         services.AddScoped<IMemberService, MemberService>();
+        services.AddScoped<IRentEpisodeService, RentEpisodeService>();
 
         return services;
     }

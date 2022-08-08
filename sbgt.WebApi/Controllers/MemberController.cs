@@ -31,7 +31,7 @@ public class MemberController : ControllerBase
     }
 
     [HttpGet("all")]
-    public async Task<ActionResult> GetAllmembers(CancellationToken cancellationToken)
+    public async Task<ActionResult> GetAllMembers(CancellationToken cancellationToken)
     {
         var members = await _memberService.GetAllMembers(cancellationToken);
         var mappedMembers = _mapper.From(members).AdaptToType<List<ClientModel.Summaries.MemberSummary>>();

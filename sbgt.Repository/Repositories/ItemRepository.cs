@@ -5,14 +5,14 @@ using sbgt.Repository.Repositories.Interfaces;
 
 namespace sbgt.Repository.Repositories;
 
-public class ItemRepository : BaseRepository<Item>, IItemRepository
+public class ItemRepository : BaseRepository<ItemEntity>, IItemRepository
 {
     public ItemRepository(DataContext context)
         : base(context)
     {
     }
     
-    public async Task<Item> GetItemByGuid(Guid guid, CancellationToken cancellationToken)
+    public async Task<ItemEntity> GetItemByGuid(Guid guid, CancellationToken cancellationToken)
     {
         var fetchedItem = await AsQueryableWithNavigationProperties
             .SingleOrDefaultAsync(i => i.Id == guid, cancellationToken);
@@ -20,12 +20,12 @@ public class ItemRepository : BaseRepository<Item>, IItemRepository
         return fetchedItem;
     }
 
-    public async Task<List<Item>> GetAllItems(CancellationToken cancellationToken)
+    public async Task<List<ItemEntity>> GetAllItems(CancellationToken cancellationToken)
     {
         return await AsQueryableWithNavigationProperties.ToListAsync(cancellationToken);
     }
 
-    public IQueryable<Item> AsQueryableWithNavigationProperties =>
+    public IQueryable<ItemEntity> AsQueryableWithNavigationProperties =>
         Context.Items
             .Include(i => i.Owner)
             .Include(i => i.RentEpisodes)

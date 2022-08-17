@@ -4,6 +4,6 @@ namespace sbgt.ServiceLogic.Services.Interfaces;
 
 public interface IMemberService
 {
-    Task<Member> GetMemberByGuid(Guid guid, CancellationToken cancellationToken);
-    Task<List<Member>> GetAllMembers(CancellationToken cancellationToken);
+    Task<MemberEntity> GetMemberByGuid(Guid guid, CancellationToken cancellationToken);
+    Task<List<MemberEntity>> GetAllMembers(CancellationToken cancellationToken);
 }

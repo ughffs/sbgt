@@ -4,6 +4,6 @@ namespace sbgt.Repository.Repositories.Interfaces;
 
 public interface IMemberRepository
 {
-    Task<Member> GetMemberByGuid(Guid guid, CancellationToken cancellationToken);
-    Task<List<Member>> GetAllMembers(CancellationToken cancellationToken);
+    Task<MemberEntity> GetMemberByGuid(Guid guid, CancellationToken cancellationToken);
+    Task<List<MemberEntity>> GetAllMembers(CancellationToken cancellationToken);
 }

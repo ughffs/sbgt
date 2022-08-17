@@ -15,16 +15,16 @@ public static class TestData
         
         foreach (var member in Members)
         {
-            context.Set<Member>().Add(member);
+            context.Set<MemberEntity>().Add(member);
         }
 
         foreach (var item in Items)
         {
-            context.Set<Item>().Add(item);
+            context.Set<ItemEntity>().Add(item);
         }
         
         // Create some rental episodes
-        RentEpisode episode = new RentEpisode()
+        RentEpisodeEntity episodeEntity = new RentEpisodeEntity()
         {
             Item = Items[0],
             Rentee = Members[2],
@@ -32,14 +32,14 @@ public static class TestData
             EndDateTime = DateTime.UtcNow.AddDays(3)
         };
 
-        context.Set<RentEpisode>().Add(episode);
+        context.Set<RentEpisodeEntity>().Add(episodeEntity);
 
         context.SaveChanges();
 
         return context;
     }
 
-    public static IList<Member> Members { get; } = new List<Member>()
+    public static IList<MemberEntity> Members { get; } = new List<MemberEntity>()
     {
         new()
         {
@@ -61,7 +61,7 @@ public static class TestData
         }
     };
 
-    public static IList<Item> Items { get; } = new List<Item>()
+    public static IList<ItemEntity> Items { get; } = new List<ItemEntity>()
     {
         new()
         {

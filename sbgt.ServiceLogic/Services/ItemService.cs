@@ -14,13 +14,13 @@ public class ItemService : IItemService
         _itemRepostory = itemRepostory;
     }
     
-    public async Task<Item> GetItemByGuid(Guid guid, CancellationToken cancellationToken)
+    public async Task<ItemEntity> GetItemByGuid(Guid guid, CancellationToken cancellationToken)
     {
         var fetchedItem = await _itemRepostory.GetItemByGuid(guid, cancellationToken);
         return fetchedItem;
     }
 
-    public async Task<List<Item>> GetAllItems(CancellationToken cancellationToken)
+    public async Task<List<ItemEntity>> GetAllItems(CancellationToken cancellationToken)
     {
         var fetchedItems = await _itemRepostory.GetAllItems(cancellationToken);
         return fetchedItems;

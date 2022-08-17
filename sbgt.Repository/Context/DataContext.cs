@@ -10,7 +10,7 @@ public class DataContext : DbContext
     {
     }
 
-    public DbSet<Item> Items { get; set; } = null!;
-    public DbSet<RentEpisode> RentEpisodes { get; set; } = null!;
-    public DbSet<Member> Members { get; set; } = null!;
+    public DbSet<ItemEntity> Items { get; set; } = null!;
+    public DbSet<RentEpisodeEntity> RentEpisodes { get; set; } = null!;
+    public DbSet<MemberEntity> Members { get; set; } = null!;
 }

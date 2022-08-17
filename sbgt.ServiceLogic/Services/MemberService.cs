@@ -14,13 +14,13 @@ public class MemberService : IMemberService
         _memberRepository = memberRepository;
     }
 
-    public async Task<Member> GetMemberByGuid(Guid guid, CancellationToken cancellationToken)
+    public async Task<MemberEntity> GetMemberByGuid(Guid guid, CancellationToken cancellationToken)
     {
         var fetchedMember = await _memberRepository.GetMemberByGuid(guid, cancellationToken);
         return fetchedMember;
     }
 
-    public async Task<List<Member>> GetAllMembers(CancellationToken cancellationToken)
+    public async Task<List<MemberEntity>> GetAllMembers(CancellationToken cancellationToken)
     {
         var fetchedMembers = await _memberRepository.GetAllMembers(cancellationToken);
         return fetchedMembers;

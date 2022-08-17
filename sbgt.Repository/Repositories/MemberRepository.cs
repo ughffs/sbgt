@@ -5,14 +5,14 @@ using sbgt.Repository.Repositories.Interfaces;
 
 namespace sbgt.Repository.Repositories;
 
-public class MemberRepository : BaseRepository<Item>, IMemberRepository
+public class MemberRepository : BaseRepository<ItemEntity>, IMemberRepository
 {
     public MemberRepository(DataContext context)
         : base(context)
     {
     }
     
-    public async Task<Member> GetMemberByGuid(
+    public async Task<MemberEntity> GetMemberByGuid(
         Guid guid,
         CancellationToken cancellationToken)
     {
@@ -22,13 +22,13 @@ public class MemberRepository : BaseRepository<Item>, IMemberRepository
         return member;
     }
 
-    public async Task<List<Member>> GetAllMembers(CancellationToken cancellationToken)
+    public async Task<List<MemberEntity>> GetAllMembers(CancellationToken cancellationToken)
     {
         var members = await Context.Members.ToListAsync(cancellationToken);
         return members;
     }
 
-    public IQueryable<Member> AsQueryableWithNavigationProperties =>
+    public IQueryable<MemberEntity> AsQueryableWithNavigationProperties =>
         Context.Members
             .Include(m => m.Items);
 

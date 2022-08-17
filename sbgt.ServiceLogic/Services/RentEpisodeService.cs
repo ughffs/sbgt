@@ -13,7 +13,7 @@ public class RentEpisodeService : IRentEpisodeService
         _rentEpisodeRepository = rentEpisodeRepository;
     }
     
-    public async Task<List<RentEpisode>> GetRentEpisodesByMemberId(
+    public async Task<List<RentEpisodeEntity>> GetRentEpisodesByMemberId(
         Guid guid,
         CancellationToken cancellationToken)
     {
@@ -23,13 +23,13 @@ public class RentEpisodeService : IRentEpisodeService
         return episodes;
     }
 
-    public async Task<List<RentEpisode>> GetAllRentEpisodes(CancellationToken cancellationToken)
+    public async Task<List<RentEpisodeEntity>> GetAllRentEpisodes(CancellationToken cancellationToken)
     {
         return await _rentEpisodeRepository
             .GetAllRentEpisodes(cancellationToken);
     }
 
-    public async Task<RentEpisode> GetRentEpisodeById(
+    public async Task<RentEpisodeEntity> GetRentEpisodeById(
         Guid id, 
         CancellationToken cancellationToken)
     {

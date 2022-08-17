@@ -1,11 +1,11 @@
 namespace sbgt.Repository.Entities;
 
-public class RentEpisode 
+public class RentEpisodeEntity 
     : BaseEntity
 {
     public DateTime StartDateTime { get; set; }
     public DateTime EndDateTime { get; set; }
 
-    public Item Item { get; set; } = null!;
-    public Member Rentee { get; set; } = null!;
+    public ItemEntity Item { get; set; } = null!;
+    public MemberEntity Rentee { get; set; } = null!;
 }

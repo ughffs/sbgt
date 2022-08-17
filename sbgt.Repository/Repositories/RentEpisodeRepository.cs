@@ -5,14 +5,14 @@ using sbgt.Repository.Repositories.Interfaces;
 
 namespace sbgt.Repository.Repositories;
 
-public class RentEpisodeRepository : BaseRepository<RentEpisode>, IRentEpisodeRepository
+public class RentEpisodeRepository : BaseRepository<RentEpisodeEntity>, IRentEpisodeRepository
 {
     public RentEpisodeRepository(DataContext context) 
         : base(context)
     {
     }
 
-    public async Task<List<RentEpisode>> GetRentEpisodesByMemberId(
+    public async Task<List<RentEpisodeEntity>> GetRentEpisodesByMemberId(
         Guid memberId,
         CancellationToken cancellationToken)
     {
@@ -23,12 +23,12 @@ public class RentEpisodeRepository : BaseRepository<RentEpisode>, IRentEpisodeRe
         return episodes;
     }
 
-    public async Task<List<RentEpisode>> GetAllRentEpisodes(CancellationToken cancellationToken)
+    public async Task<List<RentEpisodeEntity>> GetAllRentEpisodes(CancellationToken cancellationToken)
     {
         return await AsQueryableWithNavigationProperties.ToListAsync(cancellationToken);
     }
 
-    public async Task<RentEpisode> GetRentEpisodeById(
+    public async Task<RentEpisodeEntity> GetRentEpisodeById(
         Guid id,
         CancellationToken cancellationToken)
     {
@@ -38,7 +38,7 @@ public class RentEpisodeRepository : BaseRepository<RentEpisode>, IRentEpisodeRe
         return episode;
     }
 
-    private IQueryable<RentEpisode> AsQueryableWithNavigationProperties =>
+    private IQueryable<RentEpisodeEntity> AsQueryableWithNavigationProperties =>
         Context.RentEpisodes
             .Include(re => re.Item)
             .Include(re => re.Rentee);

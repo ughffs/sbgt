@@ -26,6 +26,7 @@ public static class TestData
         // Create some rental episodes
         RentEpisodeEntity episodeEntity = new RentEpisodeEntity()
         {
+            Id = SingleRentEpisodeGuid,
             Item = Items[0],
             Rentee = Members[2],
             StartDateTime = DateTime.UtcNow,
@@ -39,22 +40,27 @@ public static class TestData
         return context;
     }
 
+    public static Guid SingleRentEpisodeGuid { get; } = Guid.NewGuid();
+
     public static IList<MemberEntity> Members { get; } = new List<MemberEntity>()
     {
         new()
         {
+            Id = Guid.NewGuid(),
             Name = "Aaron Gregory",
             EmailAddress = "aaron.r.gregory@gmail.com",
             PrimaryContactNumber = "07919962743"
         },
         new()
         {
+            Id = Guid.NewGuid(),
             Name = "Darren Thrower",
             EmailAddress = "darren.thrower@gmail.com",
             PrimaryContactNumber = "07919962847"
         },
         new()
         {
+            Id = Guid.NewGuid(),
             Name = "Kieth Brumble",
             EmailAddress = "keith.brumble@gmail.com",
             PrimaryContactNumber = "07818826475"
@@ -65,14 +71,17 @@ public static class TestData
     {
         new()
         {
+            Id = Guid.NewGuid(),
             Name = "Power Drill"
         },
         new()
         {
+            Id = Guid.NewGuid(),
             Name = "Angle Grinder"
         },
         new()
         {
+            Id = Guid.NewGuid(),
             Name = "Saw"
         }
     };

@@ -20,7 +20,8 @@ public class RentEpisodeController : ControllerBase
     }
 
     [HttpGet("all")]
-    public async Task<ActionResult<ClientModel.RentEpisode>> GetAllRentEpisoeds(CancellationToken cancellationToken)
+    public async Task<ActionResult<List<ClientModel.RentEpisode>>> GetAllRentEpisodes(
+        CancellationToken cancellationToken)
     {
         var episodes = await _rentEpisodeService.GetAllRentEpisodes(cancellationToken);
         var mappedEpisodes = _mapper.From(episodes).AdaptToType<List<ClientModel.RentEpisode>>();
